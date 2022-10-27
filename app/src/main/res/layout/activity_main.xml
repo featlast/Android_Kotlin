@@ -7,27 +7,63 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_txt_principal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciando Android Con Kotlin"
+        android:text="Welcome Android Con Kotlin"
         android:textColor="@color/purple_500"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/btn_principal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome Kotlin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginTop="88dp"
+        android:onClick="cambiarColor"
+        android:text="Cambiar Color"
+        app:layout_constraintEnd_toStartOf="@+id/btn_cambiar_txt"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintTop_toBottomOf="@+id/et_txt_principal" />
+
+    <Button
+        android:id="@+id/btn_secundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Cambiar Color 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cambiar_txt" />
+
+    <EditText
+        android:id="@+id/et_txt_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_txt_principal" />
+
+    <Button
+        android:id="@+id/btn_cambiar_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:onClick="cambiarTexto"
+
+        android:text="cambiar texto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_txt_principal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
