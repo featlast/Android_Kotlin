@@ -9,8 +9,10 @@
 
     <TextView
         android:id="@+id/tv_txt_prueba"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="goBack"
         android:text="Activity 2 Example"
         android:textAlignment="center"
         android:textColor="#512DA8"
@@ -24,35 +26,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.139" />
 
-    <TextView
-        android:id="@+id/tv_txt_1"
+    <Button
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Texto 1"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="297dp" />
+        android:onClick="goBack"
+        android:text="back" />
 
-    <TextView
-        android:id="@+id/tv_txt_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Texto 2"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="365dp" />
-
-    <TextView
-        android:id="@+id/tv_txt_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Texto 3"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="365dp" />
-
-    <TextView
-        android:id="@+id/tv_txt_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Texto 4"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="297dp" />
 </LinearLayout>

@@ -1,13 +1,16 @@
 package com.example.cursoandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    val EXTRA_MESSAGE = "MensajeActivity2"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,5 +34,16 @@ class MainActivity : AppCompatActivity() {
     val etPrincipal: EditText = findViewById(R.id.et_txt_principal)
         val txtPrincipal: TextView = findViewById(R.id.tv_txt_principal)
         txtPrincipal.setText(etPrincipal.text)
+
+        Toast.makeText(applicationContext, etPrincipal.text, Toast.LENGTH_LONG).show()
+    }
+
+    /*Btn Enviar Mensaje Intent*/
+    fun enviarMensaje(view: View){
+        val etPrincipal: EditText = findViewById(R.id.et_txt_principal)
+        val msj = etPrincipal.text.toString()
+        val intent = Intent(this, ActivityPrueba::class.java).apply {
+            putExtra(EXTRA_MESSAGE, msj) }
+        startActivity(intent)
     }
 }
