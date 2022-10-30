@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ListView
 import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.TextView
@@ -19,64 +21,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*Obtener valores de los input*/
-        val num1: EditText = findViewById(R.id.et_num1)
-        val num2: EditText = findViewById(R.id.et_num2)
-        val tvResultado: TextView = findViewById(R.id.tv_resultado)
-
-        /*Obtener Valores de los radio Button*/
-        val rbSuma = findViewById<RadioButton>(R.id.rb_suma)
-        val rbResta: RadioButton = findViewById(R.id.rb_resta)
-
-        //CheckBox
-        val cbDivision: CheckBox = findViewById(R.id.cb_division)
-        val cbMultiplicacion: CheckBox = findViewById(R.id.cb_multiplicacion)
-
-        /*Spinner de operaciones*/
-        val spOperaciones: Spinner = findViewById(R.id.sp_operaciones)
-        val listaOperadores = arrayOf("Suma", "Resta", "Multiplicación", "Division")
-        val adaptador =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listaOperadores)
-        spOperaciones.adapter = adaptador
-
-
-        val btnRes: Button = findViewById(R.id.btn_resultado)
-        btnRes.setOnClickListener {
-
-            when (spOperaciones.selectedItem.toString()) {
-                "Suma" -> tvResultado.text =
-                    "Resultado : ${num1.text.toString().toInt() + num2.text.toString().toInt()}"
-                "Resta" -> tvResultado.text =
-                    "Resultado : ${num1.text.toString().toInt() - num2.text.toString().toInt()}"
-                "Multiplicación" -> tvResultado.text =
-                    "Resultado : ${num1.text.toString().toInt() * num2.text.toString().toInt()}"
-                "Division" -> tvResultado.text =
-                    "Resultado : ${num1.text.toString().toInt() / num2.text.toString().toInt()}"
-
-            }
-
-//            var res =""
-//
-//            if(rbSuma.isChecked) {
-//                tvResultado.text =
-//                    "Resultado=> ${num1.text.toString().toInt() + num2.text.toString().toInt()}"
-//                Toast.makeText(this, "La Suma Es=>${tvResultado.text}", Toast.LENGTH_LONG).show()
-//            }
-//            if(rbResta.isChecked) {
-//                tvResultado.text =
-//                    "Resultado=> ${num1.text.toString().toInt() - num2.text.toString().toInt()}"
-//                Toast.makeText(this, "La Resta Es =>${tvResultado.text}", Toast.LENGTH_LONG).show()
-//            }
-//            if(cbMultiplicacion.isChecked){
-//                res="Multiplicacion => ${num1.text.toString().toInt() * num2.text.toString().toInt()}"
-//            }
-//            if(cbDivision.isChecked){
-//                res+="Division => ${num1.text.toString().toInt() / num2.text.toString().toInt()}"
-//            }
-//
-//            tvResultado.text=res
+        /*List View*/
+        val listaPaises : ListView = findViewById(R.id.lv_paises)
+        val paises = arrayOf("Colombia", "Mexico", "Argentina", "Chile", "Brazil", "Uruguay", "Paraguay", "Venezuela", "Bolivia", "Peru", "Ecuador")
+        val adaptadorPaises = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,paises)
+        val poblaciones = arrayOf(5_000_000, 10_000_000, 8_000_000, 100_000_000, 80_000_000,5_000_000, 10_000_000, 8_000_000, 100_000_000, 80_000_000 ,10_000_000)
+        val duration = Toast.LENGTH_SHORT
+        listaPaises.adapter = adaptadorPaises
+        listaPaises.setOnItemClickListener{ adapterView, view, i , l->
+            Toast.makeText(applicationContext,"Población :${poblaciones[i]}",duration).show()
         }
 
+    val btnCall : ImageButton=findViewById(R.id.btn_call)
+        btnCall.setOnClickListener{
+            Toast.makeText(applicationContext,"Llamando...", Toast.LENGTH_LONG).show()
+        }
     }
 
 
